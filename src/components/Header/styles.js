@@ -17,12 +17,16 @@ export const Container = styled.header`
 
   > h1 {
     color: ${({theme}) => theme.COLORS.WINE};
+    white-space: nowrap;
+    margin-right: 60px;
   }
 `
+
 export const Profile = styled.div`
   display: flex;
   align-items: center;
-  font-size: 14px;
+  white-space: nowrap;
+  margin-left: 60px;
 
   > img {
     width: 60px;

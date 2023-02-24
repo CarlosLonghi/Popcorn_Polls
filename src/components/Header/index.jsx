@@ -1,3 +1,5 @@
+import { Input } from '../Input'
+
 import { Container, Profile } from "./styles";
 
 export function Header() {
@@ -6,7 +8,9 @@ export function Header() {
 
       <h1>Popcorn Polls</h1>
 
-      <input type="text" />
+      <Input
+        placeholder='Pesquisar pelo título'
+      />
 
       <Profile>
         <div>
