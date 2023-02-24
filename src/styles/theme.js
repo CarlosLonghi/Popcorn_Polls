@@ -4,8 +4,8 @@ export default {
     BACKGROUND_800: '#1C1B1E',
     BACKGROUND_700: '#262529',
 
-    RED_LIGHT: '#FF4F4F',
-    WINE: '#A70000',
+    WHITE: '#F4EDE8',
+    WINE: '#A52020',
 
     GRAY_100: '#CAC4CF',
     GRAY_300: '#948F99',
