@@ -21,6 +21,7 @@ export const Brand = styled.div`
   > h1 {
     color: ${({theme}) => theme.COLORS.WINE};
     white-space: nowrap;
+    text-shadow: 5px 5px 5px ${({theme}) => theme.COLORS.BACKGROUND_900};
   }
 `
 
