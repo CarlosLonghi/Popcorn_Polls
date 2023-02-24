@@ -1,16 +1,22 @@
-import { Input } from '../Input'
+import { Container, Brand, Search, Profile } from "./styles";
+import { FiSearch } from 'react-icons/fi'
 
-import { Container, Profile } from "./styles";
+import { Input } from '../Input'
 
 export function Header() {
   return (
     <Container>
 
-      <h1>Popcorn Polls</h1>
+      <Brand>
+        <h1>Popcorn Polls</h1>
+      </Brand>
 
-      <Input
-        placeholder='Pesquisar pelo título'
-      />
+      <Search>
+        <Input
+          placeholder='Pesquisar pelo título'
+          icon={FiSearch}
+        />
+      </Search>
 
       <Profile>
         <div>

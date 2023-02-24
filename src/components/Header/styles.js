@@ -10,23 +10,30 @@ export const Container = styled.header`
   border-bottom-style: solid;
   border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 80px;
+  justify-content: space-evenly;
+  grid-template-areas:'brand search search profile';
+`
 
+export const Brand = styled.div`
+  grid-area: brand;
   > h1 {
     color: ${({theme}) => theme.COLORS.WINE};
     white-space: nowrap;
-    margin-right: 60px;
   }
 `
 
+export const Search = styled.div`
+  grid-area: search;
+  padding: 0 10px 0;
+`
+
 export const Profile = styled.div`
+  grid-area: profile;
   display: flex;
   align-items: center;
   white-space: nowrap;
-  margin-left: 60px;
 
   > img {
     width: 60px;
