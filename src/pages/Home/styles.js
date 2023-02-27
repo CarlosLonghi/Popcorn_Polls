@@ -13,11 +13,22 @@ export const Container = styled.div`
 export const Content = styled.div`
   grid-area: content;
   padding: 0 10%;
+
   overflow-y: auto;
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.COLORS.WINE};
+    border-radius: 30px;
+  }
 
   button {
     width: fit-content;
   }
 `
-
-
