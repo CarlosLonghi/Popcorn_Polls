@@ -13,7 +13,7 @@ export const Container = styled.header`
   display: grid;
   align-items: center;
   justify-content: space-evenly;
-  grid-template-areas:'brand search search profile';
+  grid-template-areas:'brand search search search profile';
 `
 
 export const Brand = styled.div`
