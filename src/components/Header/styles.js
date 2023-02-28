@@ -10,10 +10,10 @@ export const Container = styled.header`
   border-bottom-style: solid;
   border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
-  display: grid;
+  display: flex;
+  padding: 0 10%;
   align-items: center;
-  justify-content: space-evenly;
-  grid-template-areas:'brand search search search profile';
+  justify-content: space-between;
 `
 
 export const Brand = styled.div`
@@ -26,8 +26,9 @@ export const Brand = styled.div`
 `
 
 export const Search = styled.div`
+  width: 100%;
   grid-area: search;
-  padding: 0 10px 0;
+  padding: 0 60px 0;
 `
 
 export const Profile = styled.div`
