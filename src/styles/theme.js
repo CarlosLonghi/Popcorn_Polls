@@ -7,8 +7,9 @@ export default {
     WHITE: '#F4EDE8',
     WINE: '#A52020',
 
-    GRAY_100: '#CAC4CF',
-    GRAY_300: '#948F99',
+    GRAY_100: '#cdc6c6',
+    GRAY_200: '#b5b1ac',
+    GRAY_300: '#968a8a',
 
     RED: '#FF0000',
     GREEN: '#00D501'

@@ -22,10 +22,12 @@ export default createGlobalStyle`
   }
   button, a {
     cursor: pointer;
-    transition: all 0.2s;
-    filter: brightness(0.9);
+    transition: all 0.2s ease;
+    opacity: 0.9;
+    filter: brightness(1);
   }
   button:hover, a:hover {
-    filter: brightness(1);
+    opacity: 1;
+    filter: brightness(1.2);
   }
 `

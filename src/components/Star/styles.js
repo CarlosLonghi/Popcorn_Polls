@@ -6,6 +6,6 @@ export const Container = styled.div`
   
   svg{
     flex-direction: row;
-    color: ${({theme}) => theme.COLORS.WHITE};
+    color: ${({theme}) => theme.COLORS.GRAY_100};
   }
 `

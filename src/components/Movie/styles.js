@@ -17,6 +17,7 @@ export const Container = styled.div`
   }
   > p {
     padding: 15px 0;
+    color: ${({theme}) => theme.COLORS.GRAY_200};
   }
   > footer {
     width: 100%;
