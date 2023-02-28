@@ -11,11 +11,12 @@ export function Home(){
   return (
     <Container>
       <Header/>
-      <Content>
-        <Section title='Meus filmes'>
-          <Button title='Adicionar filme' icon={FiPlus}/>
-        </Section>
 
+      <Section title='Meus filmes'>
+        <Button title='Adicionar filme' icon={FiPlus}/>
+      </Section>
+      
+      <Content>
         <Movie
           data={
             {

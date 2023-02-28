@@ -11,7 +11,6 @@ export const Container = styled.header`
   border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
   display: flex;
-  padding: 0 10%;
   align-items: center;
   justify-content: space-between;
 `
