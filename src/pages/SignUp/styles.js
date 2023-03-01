@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import backgroundImg from '../../assets/bg_sign_in.png'
+import backgroundImg from '../../assets/bg_sign_up.png'
 
 export const Container = styled.div`
   height: 100vh;
@@ -37,13 +37,20 @@ export const Form = styled.form`
     }
   }
 
-  > a {
-    margin-top: 40px;
-    color: ${({ theme }) => theme.COLORS.GRAY_100};
+  > div {
+    :nth-child(3) {
+      margin-bottom: 24px;
+    }
   }
 
   > Button {
     margin-top: 20px;
+  }
+
+  #login {
+    width: fit-content;
+    margin-top: 40px;
+    background: transparent;
   }
 `
 export const Background = styled.div`
