@@ -7,7 +7,7 @@ export function Button({ icon : Icon, title, loading = false, ...rest }){
     disabled={loading}
     {...rest}
   >
-    {Icon && <Icon size={20}/>}
+    {Icon && <Icon size={25}/>}
     {loading ? 'Carregando...' : title}
   </Container>
   )
