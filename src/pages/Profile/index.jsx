@@ -4,18 +4,17 @@ import { GiPopcorn } from 'react-icons/gi'
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 
-import { Container, Form, Avatar } from "./styles";
+import { Container, Form, Avatar, Background } from "./styles";
 
 export function Profile(){
   return(
     <Container>
-      
       <header>
         <Button 
           title='Voltar'
           icon={FiArrowLeft}
         />
-        <GiPopcorn size={50}/>
+        <GiPopcorn className='pop-corn'/>
       </header>
 
       <Form>
@@ -62,6 +61,10 @@ export function Profile(){
           icon={FiSave}
         />
       </Form>
+
+      <Background
+        alt='Imagem de uma sala de cinema'
+      />
 
     </Container>
   )

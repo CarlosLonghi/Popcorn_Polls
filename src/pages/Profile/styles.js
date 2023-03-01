@@ -1,7 +1,10 @@
 import styled from 'styled-components'
 
+import backgroundImg from '../../assets/bg_profile.png'
+
 export const Container = styled.div`
   width: 100%;
+  height: 100vh;
 
   > header {
     width: 100%;
@@ -10,21 +13,22 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 120px;
-
-    background: ${({ theme }) => theme.COLORS.WINE};
-    opacity: 0.9;
+    padding: 0 15%;
 
     > Button {
       width: fit-content;
       justify-content: left;
       background-color: transparent;
     }
+
+    .pop-corn {
+      font-size: 50px;
+    }
   }
 `
 
 export const Form = styled.form`
-  max-width: 350px;
+  max-width: 400px;
   margin: 30px auto 0;
 
   > div:nth-child(3) {
@@ -38,10 +42,9 @@ export const Form = styled.form`
     }
   }
 `
-
 export const Avatar = styled.div`
   position: relative;
-  margin: -120px auto 64px;
+  margin: -100px auto 64px;
 
   width: 185px;
   height: 185px;
@@ -86,4 +89,14 @@ export const Avatar = styled.div`
       color: ${({ theme }) => theme.COLORS.WHITE};
     }
   }
+`
+export const Background = styled.div`
+  background: url(${backgroundImg}) no-repeat center center;
+  background-size: cover;
+
+  position: fixed;
+  top: 0;
+  z-index: -100;
+  height: 100vh;
+  width: 100%;
 `
