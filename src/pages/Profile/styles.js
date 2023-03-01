@@ -14,16 +14,6 @@ export const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 0 15%;
-
-    > Button {
-      width: fit-content;
-      justify-content: left;
-      background-color: transparent;
-    }
-
-    .pop-corn {
-      font-size: 50px;
-    }
   }
 `
 

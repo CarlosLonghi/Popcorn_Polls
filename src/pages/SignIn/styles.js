@@ -44,6 +44,7 @@ export const Form = styled.form`
 
   > Button {
     margin-top: 20px;
+    margin-bottom: 40px;
   }
 `
 export const Background = styled.div`

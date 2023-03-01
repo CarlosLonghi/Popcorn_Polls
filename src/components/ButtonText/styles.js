@@ -4,7 +4,7 @@ export const Container = styled.button`
   background: none;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
 
   color: ${({ theme, isActive }) =>
     isActive ? theme.COLORS.WINE : theme.COLORS.GRAY_100};

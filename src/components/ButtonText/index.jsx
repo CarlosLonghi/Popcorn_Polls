@@ -7,7 +7,7 @@ export function ButtonText({ title, isActive = false, icon: Icon, ...rest }) {
       isActive={isActive}
       {...rest}
     >
-      {Icon && <Icon size={25}/>}
+      {Icon && <Icon size={20}/>}
       {title}
     </Container>
   )

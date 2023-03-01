@@ -16,6 +16,7 @@ export const Container = styled.header`
 `
 
 export const Brand = styled.div`
+  padding-left: 10%;
   grid-area: brand;
   > h1 {
     color: ${({theme}) => theme.COLORS.WINE};
@@ -31,6 +32,7 @@ export const Search = styled.div`
 `
 
 export const Profile = styled.div`
+  padding-right: 10%;
   grid-area: profile;
   display: flex;
   align-items: center;

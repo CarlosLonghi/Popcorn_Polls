@@ -2,6 +2,7 @@ import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera, FiSave } from 'react-ico
 import { GiPopcorn } from 'react-icons/gi'
 
 import { Button } from '../../components/Button'
+import { ButtonText } from '../../components/ButtonText'
 import { Input } from '../../components/Input'
 
 import { Container, Form, Avatar, Background } from "./styles";
@@ -10,11 +11,11 @@ export function Profile(){
   return(
     <Container>
       <header>
-        <Button 
+        <ButtonText 
           title='Voltar'
           icon={FiArrowLeft}
         />
-        <GiPopcorn className='pop-corn'/>
+        <GiPopcorn size={50}/>
       </header>
 
       <Form>
