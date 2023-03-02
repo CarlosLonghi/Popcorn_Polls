@@ -11,8 +11,9 @@ export const Container = styled.div`
     'header'
     'section'
     'content';
-  
+
   > Section {
+    width: 80%;
     button {
       width: fit-content;
     }
@@ -22,8 +23,7 @@ export const Content = styled.div`
   grid-area: content;
   width: 80%;
   margin: 0 auto;
-  
-  
+
   overflow-y: auto;
   ::-webkit-scrollbar {
     width: 5px;

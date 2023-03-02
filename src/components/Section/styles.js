@@ -7,8 +7,8 @@ export const Container = styled.section`
   padding-bottom: 10px;
 
   grid-area: section;
-  width: 80%;
-  margin: 10px auto 10px;
+  width: 100%;
+  margin: 0 auto 10px;
   
   border-bottom-width: 1px;
   border-bottom-style: solid;

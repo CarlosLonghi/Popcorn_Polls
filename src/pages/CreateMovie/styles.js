@@ -10,6 +10,7 @@ export const Container = styled.div`
   grid-template-areas:
     'header'
     'form';
+
 `
 
 export const Form = styled.form`
@@ -25,10 +26,30 @@ export const Form = styled.form`
     }
   }
 
-  > div {
+  .title {
     display: flex;
     gap: 30px;
-    padding: 30px 0;
+    padding: 20px 0;
   }
 
+  > Section {
+    margin-bottom: 20px;
+  }
+
+  .tags {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    button:nth-child(2){
+      background-color: ${({theme}) => theme.COLORS.GREEN};
+    }
+  }
 `
