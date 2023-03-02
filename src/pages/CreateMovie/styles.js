@@ -1,3 +1,34 @@
 import styled from "styled-components";
 
-export const Container = styled.div``
+export const Container = styled.div`
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 5%;
+
+  display: grid;
+  grid-template-rows: 115px auto;
+  grid-template-areas:
+    'header'
+    'form';
+`
+
+export const Form = styled.form`
+  grid-area: form;
+  width: 80%;
+  margin: 30px auto;
+
+  > header {
+
+    h1 {
+      margin-top: 20px;
+      font-weight: 400;
+    }
+  }
+
+  > div {
+    display: flex;
+    gap: 30px;
+    padding: 30px 0;
+  }
+
+`

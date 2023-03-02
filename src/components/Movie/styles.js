@@ -1,12 +1,13 @@
-import styled from "styled-components";
- 
+import styled from 'styled-components'
+
 export const Container = styled.div`
-  width: 100%;
+  max-width: 100%;
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
   border: none;
   border-radius: 10px;
   padding: 20px;
-  margin-bottom: 16px;
+  margin: 0 5px 10px 0;
+
   > h1 {
     flex: 1;
     text-align: left;
@@ -17,7 +18,7 @@ export const Container = styled.div`
   }
   > p {
     padding: 15px 0;
-    color: ${({theme}) => theme.COLORS.GRAY_200};
+    color: ${({ theme }) => theme.COLORS.GRAY_200};
   }
   > footer {
     width: 100%;
