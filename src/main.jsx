@@ -5,13 +5,13 @@ import { ThemeProvider } from 'styled-components'
 import theme from './styles/theme'
 import GlobalStyles from './styles/global'
 
-import { CreateMovie } from './pages/CreateMovie'
+import { PreviewMovie } from './pages/PreviewMovie'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles/>
-      <CreateMovie />
+      <PreviewMovie />
     </ThemeProvider>
   </React.StrictMode>
 )

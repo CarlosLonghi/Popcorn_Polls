@@ -10,7 +10,6 @@ export const Container = styled.div`
   grid-template-areas:
     'header'
     'form';
-
 `
 
 export const Form = styled.form`
@@ -41,6 +40,9 @@ export const Form = styled.form`
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
     margin-bottom: 20px;
+    background-color: ${({theme}) => theme.COLORS.BACKGROUND_900};
+    border-radius: 10px;
+    padding: 16px;
   }
 
   .buttons {
