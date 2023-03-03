@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-export const Container = styled.button`
+export const Container = styled(Link)`
   background: none;
   display: flex;
   align-items: center;
@@ -11,7 +12,5 @@ export const Container = styled.button`
 
   border: none;
   font-size: 16px;
-
-  transition: all 0.2s;
   
 `

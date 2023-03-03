@@ -38,7 +38,7 @@ export const Profile = styled.div`
   align-items: center;
   white-space: nowrap;
 
-  > img {
+  img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -51,15 +51,7 @@ export const Profile = styled.div`
     align-items: flex-end;
   }
 
-  > strong {
-    color: ${({ theme }) => theme.COLORS.WHITE};
-  }
-
   a {
-    color: ${({ theme }) => theme.COLORS.GRAY_300};
-
-    :hover {
-      color: ${({theme}) => theme.COLORS.WHITE};
-    }
+    color: ${({ theme }) => theme.COLORS.GRAY_100};
   }
 `

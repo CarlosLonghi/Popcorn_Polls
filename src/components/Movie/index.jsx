@@ -1,13 +1,14 @@
-import { Container } from './styles'
+import { Container, Content } from './styles'
 import { Tag } from '../Tag'
 import { Star } from '../Star'
 
 export function Movie({data, ...rest}){
   return(
     <Container {...rest}>
+      <Content to={`/preview_movie/:${data.id}`}>
       <h1>{data.title}</h1>
       <Star/>
-
+      
       <p>
         {data.description}
       </p>
@@ -22,6 +23,7 @@ export function Movie({data, ...rest}){
           }
         </footer>
       }
+      </Content>
     </Container>
   )
 }

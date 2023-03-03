@@ -4,7 +4,6 @@ import backgroundImg from '../../assets/bg_sign_up.png'
 
 export const Container = styled.div`
   height: 100vh;
-
   display: flex;
   align-items: stretch;
 `
@@ -44,14 +43,9 @@ export const Form = styled.form`
   }
 
   > Button {
-    margin-top: 20px;
+    margin: 20px 0 40px;
   }
 
-  #login {
-    width: fit-content;
-    margin-top: 40px;
-    background: transparent;
-  }
 `
 export const Background = styled.div`
   flex: 1;

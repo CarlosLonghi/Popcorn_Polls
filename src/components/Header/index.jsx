@@ -1,7 +1,10 @@
 import { Container, Brand, Search, Profile } from "./styles";
 import { FiSearch } from 'react-icons/fi'
 
+import { Link } from "react-router-dom";
+
 import { Input } from '../Input'
+import { ButtonText } from '../ButtonText'
 
 export function Header() {
   return (
@@ -20,11 +23,16 @@ export function Header() {
 
       <Profile>
         <div>
-          <strong>Carlos Longhi</strong>
+          <ButtonText 
+            title='Carlos Longhi' 
+            to='/profile'
+          />
           <a href="#">sair</a>
         </div>
 
-        <img src="https://github.com/CarlosLonghi.png" alt="Foto do usuário" />
+        <Link to='/profile'>
+          <img src="https://github.com/CarlosLonghi.png" alt="Foto do usuário" />
+        </Link>
       </Profile>
       
     </Container>

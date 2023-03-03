@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
@@ -18,7 +18,6 @@ export const Form = styled.form`
   margin: 30px auto;
 
   > header {
-
     h1 {
       margin-top: 20px;
       font-weight: 400;
@@ -40,7 +39,7 @@ export const Form = styled.form`
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
     margin-bottom: 20px;
-    background-color: ${({theme}) => theme.COLORS.BACKGROUND_900};
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
     border-radius: 10px;
     padding: 16px;
   }
@@ -50,8 +49,8 @@ export const Form = styled.form`
     justify-content: space-between;
     gap: 30px;
 
-    button:nth-child(2){
-      background-color: ${({theme}) => theme.COLORS.GREEN};
+    button:nth-child(2) {
+      background-color: ${({ theme }) => theme.COLORS.GREEN};
     }
   }
 `

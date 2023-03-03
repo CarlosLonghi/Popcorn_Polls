@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
   max-width: 100%;
@@ -8,6 +9,8 @@ export const Container = styled.div`
   padding: 20px;
   margin: 0 5px 10px 0;
 
+`
+export const Content = styled(Link)`
   > h1 {
     flex: 1;
     text-align: left;

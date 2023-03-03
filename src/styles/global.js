@@ -29,5 +29,7 @@ export default createGlobalStyle`
   button:hover, a:hover {
     opacity: 1;
     filter: brightness(1.1);
+    color: ${({theme}) => theme.COLORS.WHITE};
+    
   }
 `

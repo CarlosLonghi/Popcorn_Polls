@@ -13,6 +13,7 @@ export function PreviewMovie(){
       <Header/>
       <Content>
         <ButtonText 
+          to='/'
           title='Voltar' 
           icon={FiArrowLeft}
         />

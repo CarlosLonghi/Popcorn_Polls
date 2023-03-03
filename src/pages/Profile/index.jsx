@@ -12,6 +12,7 @@ export function Profile(){
     <Container>
       <header>
         <ButtonText 
+          to='/'
           title='Voltar'
           icon={FiArrowLeft}
         />

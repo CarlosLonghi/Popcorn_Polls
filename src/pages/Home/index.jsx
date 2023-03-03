@@ -1,9 +1,8 @@
 import { FiPlus } from 'react-icons/fi'
-import { Container, Content, Films } from './styles'
+import { Container, NewMovie, Content } from './styles'
 
 import { Header } from '../../components/Header'
 import { Section } from '../../components/Section'
-import { Button } from '../../components/Button'
 import { Movie } from '../../components/Movie'
 
 
@@ -12,13 +11,17 @@ export function Home(){
     <Container>
       <Header/>
       <Section title='Meus filmes'>
-        <Button title='Adicionar filme' icon={FiPlus}/>
+        <NewMovie to='/create_movie'>
+          <FiPlus/>
+          Adicionar filme
+        </NewMovie>
       </Section>
 
       <Content>    
-          <Movie
+          <Movie 
             data={
-              {
+              { 
+                id: '1',
                 title: 'Os Vingadores',
                 rating: 4,
                 description: `
@@ -36,6 +39,7 @@ export function Home(){
           <Movie
             data={
               {
+                id: '2',
                 title: 'Os Vingadores',
                 rating: 4,
                 description: `
@@ -53,6 +57,7 @@ export function Home(){
           <Movie
             data={
               {
+                id: '3',
                 title: 'Os Vingadores',
                 rating: 4,
                 description: `
@@ -70,6 +75,7 @@ export function Home(){
           <Movie
             data={
               {
+                id: '4',
                 title: 'Os Vingadores',
                 rating: 4,
                 description: `

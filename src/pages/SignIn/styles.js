@@ -37,14 +37,8 @@ export const Form = styled.form`
     }
   }
 
-  > a {
-    margin-top: 40px;
-    color: ${({ theme }) => theme.COLORS.GRAY_100};
-  }
-
   > Button {
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin: 20px 0 40px;
   }
 `
 export const Background = styled.div`
