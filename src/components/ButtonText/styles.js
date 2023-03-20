@@ -7,8 +7,7 @@ export const Container = styled(Link)`
   align-items: center;
   gap: 8px;
 
-  color: ${({ theme, isActive }) =>
-    isActive ? theme.COLORS.WINE : theme.COLORS.GRAY_100};
+  color: ${({ theme }) => theme.COLORS.GRAY_100};
 
   border: none;
   font-size: 16px;
