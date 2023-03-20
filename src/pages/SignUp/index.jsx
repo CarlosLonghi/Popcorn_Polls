@@ -20,7 +20,7 @@ export function SignUp() {
   
   const passwordMatched = password === passwordConfirm
   const checkFields = !name || !email || !password || !passwordConfirm
-  
+
   function handleSignUp(){
     if(checkFields){
       return alert('Preencha todos os campos!')
@@ -95,7 +95,7 @@ export function SignUp() {
       </Form>
       
       <Background
-        alt='Imagem de um projeto de cinema'
+        alt='Imagem de um projetor de cinema'
       />
     </Container>
   )
