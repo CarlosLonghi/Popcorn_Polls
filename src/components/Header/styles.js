@@ -51,7 +51,9 @@ export const Profile = styled.div`
     align-items: flex-end;
   }
 
-  a {
+  button {
+    border: none;
+    background: transparent;
     color: ${({ theme }) => theme.COLORS.GRAY_100};
   }
 `

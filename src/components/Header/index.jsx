@@ -1,3 +1,4 @@
+import { useAuth } from '../../hooks/auth'
 import { Container, Brand, Search, Profile } from "./styles";
 import { FiSearch } from 'react-icons/fi'
 
@@ -7,6 +8,8 @@ import { Input } from '../Input'
 import { ButtonText } from '../ButtonText'
 
 export function Header() {
+  const { signOut } = useAuth()
+
   return (
     <Container>
 
@@ -27,7 +30,7 @@ export function Header() {
             title='Carlos Longhi' 
             to='/profile'
           />
-          <a href="#">sair</a>
+          <button onClick={signOut}>sair</button>
         </div>
 
         <Link to='/profile'>
