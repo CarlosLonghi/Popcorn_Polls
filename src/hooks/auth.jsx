@@ -15,7 +15,7 @@ function AuthProvider({ children }) {
       localStorage.setItem('@popcorn_polls:token', token)
       localStorage.setItem('@popcorn_polls:user', JSON.stringify(user))
 
-      api.defaults.headers.authorization = `Bearer ${token}`
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`
       setData({ token, user})
 
     } catch (error) {
@@ -39,7 +39,7 @@ function AuthProvider({ children }) {
     const user = localStorage.getItem('@popcorn_polls:user')
 
     if(token && user) {
-      api.defaults.headers.authorization = `Bearer ${token}`
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
       setData({
         token,
