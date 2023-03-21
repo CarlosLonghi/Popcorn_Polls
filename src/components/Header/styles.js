@@ -38,22 +38,25 @@ export const Profile = styled.div`
   align-items: center;
   white-space: nowrap;
 
-  img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-  }
-
-  > div {
+  div {
     display: flex;
     flex-direction: column;
-    margin-right: 10px;
-    align-items: flex-end;
+    align-items: center;
   }
 
-  button {
-    border: none;
-    background: transparent;
-    color: ${({ theme }) => theme.COLORS.GRAY_100};
+  a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    > strong {
+      color: ${({theme}) => theme.COLORS.GRAY_100};
+    }
+
+    > img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
   }
 `

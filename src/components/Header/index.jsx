@@ -1,6 +1,6 @@
 import { useAuth } from '../../hooks/auth'
 import { Container, Brand, Search, Profile } from "./styles";
-import { FiSearch } from 'react-icons/fi'
+import { FiSearch, FiLogOut } from 'react-icons/fi'
 
 import { Link } from "react-router-dom";
 
@@ -26,16 +26,20 @@ export function Header() {
 
       <Profile>
         <div>
-          <ButtonText 
-            title='Carlos Longhi' 
-            to='/profile'
-          />
-          <button onClick={signOut}>sair</button>
-        </div>
+          <Link to='/profile'>
+            <strong>Carlos Longhi</strong>
+            <img 
+              src="https://github.com/CarlosLonghi.png" 
+              alt="Foto do usuário" 
+            />
+          </Link>
 
-        <Link to='/profile'>
-          <img src="https://github.com/CarlosLonghi.png" alt="Foto do usuário" />
-        </Link>
+          <ButtonText 
+            title='sair'
+            icon={FiLogOut}
+            onClick={signOut}
+          />
+        </div>
       </Profile>
       
     </Container>

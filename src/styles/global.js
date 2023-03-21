@@ -24,7 +24,7 @@ export default createGlobalStyle`
     cursor: pointer;
     transition: all 0.2s ease;
     opacity: 0.9;
-    filter: brightness(0.9);
+    filter: brightness(1);
   }
   button:hover, a:hover {
     opacity: 1;
