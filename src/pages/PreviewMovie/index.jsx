@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom'
+
 import { Container, Content, Text } from './styles'
 import { FiArrowLeft, FiClock } from 'react-icons/fi'
 
@@ -8,14 +10,20 @@ import { Tag } from '../../components/Tag'
 
 
 export function PreviewMovie(){
+  
+  const navigate = useNavigate()
+  function handleBack() {
+    navigate(-1)
+  }
+
   return(
     <Container>
       <Header/>
       <Content>
         <ButtonText 
-          to='/'
           title='Voltar' 
           icon={FiArrowLeft}
+          onClick={handleBack}
         />
         
         <div className='title'>

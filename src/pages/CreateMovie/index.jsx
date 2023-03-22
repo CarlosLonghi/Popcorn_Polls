@@ -1,5 +1,6 @@
-import { FiArrowLeft, FiSave, FiTrash2 } from 'react-icons/fi'
+import { useNavigate } from 'react-router-dom';
 
+import { FiArrowLeft, FiSave, FiTrash2 } from 'react-icons/fi'
 import { Container, Form } from "./styles";
 
 import { Header } from '../../components/Header'
@@ -12,6 +13,12 @@ import { TagMovie } from '../../components/TagMovie'
 
 
 export function CreateMovie(){
+  
+  const navigate = useNavigate()
+  function handleBack() {
+    navigate(-1)
+  }
+
   return(
     <Container>
       <Header/>  
@@ -19,9 +26,9 @@ export function CreateMovie(){
       <Form>
         <header>
           <ButtonText 
-            to='/'
             title='Voltar'
             icon={FiArrowLeft}
+            onClick={handleBack}
           />   
           <h1>Novo filme</h1>
         </header>
