@@ -1,14 +1,21 @@
-import { useAuth } from '../../hooks/auth'
-import { Container, Brand, Search, Profile } from "./styles";
+import { Link } from "react-router-dom";
+
 import { FiSearch, FiLogOut } from 'react-icons/fi'
 
-import { Link } from "react-router-dom";
+import { useAuth } from '../../hooks/auth'
+import { api } from '../../services/api';
+
+import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
+
+import { Container, Brand, Search, Profile } from "./styles";
 
 import { Input } from '../Input'
 import { ButtonText } from '../ButtonText'
 
 export function Header() {
-  const { signOut } = useAuth()
+  const { signOut, user } = useAuth()
+
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
 
   return (
     <Container>
@@ -27,10 +34,10 @@ export function Header() {
       <Profile>
         <div>
           <Link to='/profile'>
-            <strong>Carlos Longhi</strong>
+            <strong>{user.name}</strong>
             <img 
-              src="https://github.com/CarlosLonghi.png" 
-              alt="Foto do usuário" 
+              src={avatarUrl}
+              alt={`Foto de perfil de ${user.name}`} 
             />
           </Link>
 
