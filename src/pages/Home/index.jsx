@@ -11,7 +11,7 @@ export function Home(){
     <Container>
       <Header/>
       <Section title='Meus filmes'>
-        <NewMovie to='/create_movie'>
+        <NewMovie to='/movie_notes'>
           <FiPlus/>
           Adicionar filme
         </NewMovie>
