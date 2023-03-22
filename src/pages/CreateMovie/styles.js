@@ -30,8 +30,10 @@ export const Form = styled.form`
     padding: 20px 0;
   }
 
-  > Section {
+  > h2 {
     margin-bottom: 20px;
+    font-weight: 400;
+    color: ${({theme}) => theme.COLORS.GRAY_100};
   }
 
   .tags {

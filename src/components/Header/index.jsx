@@ -12,7 +12,7 @@ import { Container, Brand, Search, Profile } from "./styles";
 import { Input } from '../Input'
 import { ButtonText } from '../ButtonText'
 
-export function Header() {
+export function Header({onChange}) {
   const { signOut, user } = useAuth()
 
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
@@ -28,6 +28,7 @@ export function Header() {
         <Input
           placeholder='Pesquisar pelo título'
           icon={FiSearch}
+          onChange={onChange}
         />
       </Search>
 

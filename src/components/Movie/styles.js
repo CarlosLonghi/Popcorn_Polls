@@ -2,12 +2,12 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
-  max-width: 100%;
+  width: 100%;
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
   border: none;
   border-radius: 10px;
   padding: 20px;
-  margin: 0 5px 10px 0;
+  margin: 0 8px 10px 0;
 
 `
 export const Content = styled(Link)`

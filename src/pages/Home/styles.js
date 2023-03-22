@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -6,12 +5,8 @@ export const Container = styled.div`
   height: 100vh;
   padding-bottom: 5%;
 
-  display: grid;
-  grid-template-rows: 115px auto;
-  grid-template-areas:
-    'header'
-    'section'
-    'content';
+  display: flex;
+  flex-direction: column;
 
   > Section {
     width: 80%;
@@ -20,30 +15,29 @@ export const Container = styled.div`
     }
   }
 `
-export const NewMovie = styled(Link)`
+export const NewMovie = styled.div`
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  color: ${({ theme, isActive }) =>
-    isActive ? theme.COLORS.WINE : theme.COLORS.GRAY_100};
+  padding: 30px 10%;
+  
+  h2 {
+    color: ${({ theme }) => theme.COLORS.GRAY_100};
+    font-weight: 500;
+  }
 
-  background-color: ${({theme}) => theme.COLORS.WINE};
-  padding: 16px 30px;
-  border-radius: 10px;
-
-  svg {
-    font-size: 20px;
+  button {
+    width: fit-content;
   }
 `
 
 export const Content = styled.div`
-  grid-area: content;
   width: 80%;
   margin: 0 auto;
 
   overflow-y: auto;
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 4px;
   }
 
   ::-webkit-scrollbar-track {
@@ -54,8 +48,4 @@ export const Content = styled.div`
     background: ${({ theme }) => theme.COLORS.WINE};
     border-radius: 30px;
   }
-`
-
-export const Films = styled.div`
-  padding-right: 10px;
 `

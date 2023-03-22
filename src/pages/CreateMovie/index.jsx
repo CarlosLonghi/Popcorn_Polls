@@ -92,11 +92,11 @@ export function CreateMovie(){
         </div>
 
         <TextArea 
-          placeholder='Sinopse do filme'
+          placeholder='Sinopse do filme (opcional)'
           onChange={event => setDescription(event.target.value)}
         />
         
-        <Section title='Categorias'/>
+        <h2>Categorias</h2>
 
         <div className='tags'>
           {
