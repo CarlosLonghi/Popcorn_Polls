@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { FiArrowLeft, FiSave, FiTrash2 } from 'react-icons/fi'
@@ -15,8 +16,20 @@ import { TagMovie } from '../../components/TagMovie'
 export function CreateMovie(){
   
   const navigate = useNavigate()
-  function handleBack() {
+  const [tags, setTags] = useState([])
+  const [newTag, setNewTag] = useState('')
+  
+  function handleBack(){
     navigate(-1)
+  }
+
+  function handleAddTag(){
+    setTags(prevState => [...prevState, newTag])
+    setNewTag('')
+  }
+
+  function handleRemoveTag(deleted){
+    setTags(prevState => prevState.filter(tag => tag !== deleted))
   }
 
   return(
@@ -43,11 +56,26 @@ export function CreateMovie(){
         />
         
         <Section title='Categorias'/>
+
         <div className='tags'>
-          <TagMovie placeholder='Nova Categoria' isNew/>
-          <TagMovie value='ficção cientifica'/>
-          <TagMovie value='aventura'/>
-          <TagMovie value='ação'/>
+          {
+            tags.map((tag, index) => (
+              <TagMovie 
+                key={String(index)}
+                value={tag}
+                onClick={() => handleRemoveTag(tag)}
+              />
+            ))
+          }
+
+          <TagMovie 
+            isNew
+            placeholder='Nova Categoria' 
+            value={newTag}
+            onChange={event => setNewTag(event.target.value)}
+            onClick={handleAddTag}
+          />
+          
         </div>
 
         <div className='buttons'>
