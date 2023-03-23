@@ -10,6 +10,12 @@ export const Container = styled.div`
   grid-template-areas:
     'header'
     'form';
+
+  >Header {
+    div:nth-child(2) {
+      display: none;
+    }
+  }
 `
 
 export const Form = styled.form`
