@@ -17,6 +17,7 @@ export function Home(){
 
   const [movies, setMovies] = useState([])
   const [tags, setTags] = useState([])
+
   const navigate = useNavigate()
 
   function handleCreateMovie() {
@@ -34,7 +35,7 @@ export function Home(){
 
   useEffect(() => {
     async function fetchMovies() {
-      const response = await api.get(`/movie_notes?title=${search}`) // Query builder
+      const response = await api.get(`/movie_notes?title=${search}`)
       setMovies(response.data)
     }
 
@@ -62,11 +63,12 @@ export function Home(){
           {
             movies.map(movie => (
               <Movie 
-                key={movie.id}
+                key={String(movie.id)}
                 data={movie} 
               />
             ))
           }
+
         </Section>  
       </Content>
       
