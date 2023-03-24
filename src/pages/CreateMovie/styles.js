@@ -32,8 +32,37 @@ export const Form = styled.form`
 
   .title {
     display: flex;
-    gap: 30px;
+    gap: 15px;
     padding: 20px 0;
+
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+    h2 {
+      color: ${({theme}) => theme.COLORS.GRAY_100};
+      font-weight: 400;
+      margin-top: -5px;
+      margin-right: 5px;
+    }
+
+    svg{
+      font-size: 25px;
+      flex-direction: row;
+      color: ${({theme}) => theme.COLORS.GRAY_100};
+    }
+
+    input[type='radio'] {
+      display: none;
+    }
+
+    .star {
+      cursor: pointer;
+      transition: color 200ms;
+    }
   }
 
   > h2 {

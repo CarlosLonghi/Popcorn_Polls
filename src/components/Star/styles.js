@@ -2,10 +2,20 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: row;
-  font-size: 20px;
+  align-items: center;
+  
   svg{
+    font-size: 25px;
     flex-direction: row;
     color: ${({theme}) => theme.COLORS.GRAY_100};
+  }
+
+  input[type='radio'] {
+    display: none;
+  }
+
+  .star {
+    cursor: pointer;
+    transition: color 200ms;
   }
 `

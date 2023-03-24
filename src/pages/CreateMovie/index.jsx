@@ -6,19 +6,20 @@ import { Container, Form } from "./styles";
 
 import { api } from '../../services/api';
 
-import { Header } from '../../components/Header'
-import { ButtonText } from '../../components/ButtonText'
-import {Button} from '../../components/Button'
+import { Header } from '../../components/Header';
+import { ButtonText } from '../../components/ButtonText';
+import {Button} from '../../components/Button';
 import { Input } from '../../components/Input';
 import { TextArea } from '../../components/TextArea';
-import { Section } from '../../components/Section'
-import { TagMovie } from '../../components/TagMovie'
-
+import { TagMovie } from '../../components/TagMovie';
+import { RiStarFill } from 'react-icons/ri';
 
 export function CreateMovie(){
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
-  const [rating, setRating] = useState('')
+
+  const [rating, setRating] = useState(null)
+  const [hover, setHover] = useState(null);
 
   const [tags, setTags] = useState([])
   const [newTag, setNewTag] = useState('')
@@ -85,10 +86,33 @@ export function CreateMovie(){
             placeholder='Titulo'
             onChange={event => setTitle(event.target.value)}
           />
-          <Input 
-            placeholder='Sua nota (de 0 a 5)'
-            onChange={event => setRating(event.target.value)}
-          />
+
+          <div className='rating'>
+            <h2>Nota:</h2>
+          {
+            [...Array(5).keys()].map((star, i) => {
+            const ratingValue = i + 1;
+
+            return (
+              <label key={i} htmlFor={`star-${ratingValue}`}>
+                <input
+                  id={`star-${ratingValue}`}
+                  type="radio"
+                  name="rating"
+                  value={ratingValue}
+                  onClick={() => {setRating(ratingValue)}}
+                />
+                <RiStarFill
+                  className="star"
+                  color={ratingValue <= (hover || rating) ? 'gold' : 'gray'}
+                  onMouseEnter={() => setHover(ratingValue)}
+                  onMouseLeave={() => setHover(null)}
+                />
+              </label>
+              );
+            })
+          }
+          </div>
         </div>
 
         <TextArea 

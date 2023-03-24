@@ -7,7 +7,11 @@ export function Movie({ data, ...rest }){
     <Container {...rest}>
       <Content to={`/preview_movie/:${data.id}`}>
         <h1>{data.title}</h1>
-        <Star/>
+        
+        <h2>{data.rating}</h2>
+        <Star
+          ratingValue={data.rating}
+        />
         
         <p>
           {data.description}
