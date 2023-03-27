@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { format } from 'date-fns'
 
 import { Container, Content, Text } from './styles'
 import { FiArrowLeft, FiClock } from 'react-icons/fi'
@@ -17,6 +18,9 @@ import { Tag } from '../../components/Tag'
 export function PreviewMovie(){
   const [data, setData] = useState(null)
   const { user } = useAuth()
+  const formattedDate = data ? format(
+    new Date(data.created_at), 'dd/MM/yyyy'
+  ):""
   
   const params = useParams()
   const navigate = useNavigate()
@@ -85,7 +89,7 @@ export function PreviewMovie(){
             </p>
             
             <FiClock/>
-            <p>{data.created_at}</p>
+            <p>{formattedDate}</p>
           </div>
 
           {

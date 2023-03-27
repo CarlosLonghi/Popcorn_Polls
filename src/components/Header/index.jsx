@@ -46,6 +46,7 @@ export function Header({onChange}) {
             title='sair'
             icon={FiLogOut}
             onClick={signOut}
+            to='/'
           />
         </div>
       </Profile>
