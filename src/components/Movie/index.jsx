@@ -8,9 +8,8 @@ export function Movie({ data, ...rest }){
       <Content to={`/preview_movie/:${data.id}`}>
         <h1>{data.title}</h1>
         
-        <h2>{data.rating}</h2>
         <Star
-          ratingValue={data.rating}
+          value={data.rating}
         />
         
         <p>

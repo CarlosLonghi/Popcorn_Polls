@@ -1,37 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Container } from './styles';
 import { RiStarFill } from 'react-icons/ri';
 
-export function Star() {
-  const [rating, setRating] = useState(null);
-  const [hover, setHover] = useState(null);
+export function Star({value}) {
+  const [rating, setRating] = useState({value});
 
-  const handleRatingChange = (ratingValue) => {
-    setRating(ratingValue);
-    console.log(rating);
-  };
-  
+  useEffect(() => {
+    setRating(value)
+  },[value])
 
   return (
     <Container>
-      {[...Array(5).keys()].map((star, i) => {
-        const ratingValue = i + 1;
+      {[...Array(5).keys()].map(index => {
+        const ratingValue = index + 1;
 
         return (
-          <label key={i} htmlFor={`star-${ratingValue}`}>
+          <label key={index} htmlFor={`star-${ratingValue}`}>
             <input
               id={`star-${ratingValue}`}
               type="radio"
               name="rating"
-              value={ratingValue}
-              onClick={() => {setRating(ratingValue)}}
-              onChange={handleRatingChange}
             />
             <RiStarFill
               className="star"
-              color={ratingValue <= (hover || rating) ? 'gold' : 'gray'}
-              onMouseEnter={() => setHover(ratingValue)}
-              onMouseLeave={() => setHover(null)}
+              color={ratingValue <= (rating) ? 'gold' : 'gray'}
             />
           </label>
         );

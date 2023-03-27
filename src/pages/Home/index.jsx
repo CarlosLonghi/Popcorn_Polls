@@ -16,22 +16,12 @@ export function Home(){
   const [search, setSearch] = useState('')
 
   const [movies, setMovies] = useState([])
-  const [tags, setTags] = useState([])
 
   const navigate = useNavigate()
 
   function handleCreateMovie() {
     navigate('/movie_notes')
   }
-
-  useEffect(() => {
-    async function fetchTags(){
-      const response = await api.get('/movie_tags')
-      setTags(response.data)
-    }
-
-    fetchTags()
-  },[])
 
   useEffect(() => {
     async function fetchMovies() {
