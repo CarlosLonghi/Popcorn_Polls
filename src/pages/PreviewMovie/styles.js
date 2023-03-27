@@ -11,7 +11,7 @@ export const Container = styled.div`
     'header'
     'content';
 
-  >Header {
+  > Header {
     div:nth-child(2) {
       display: none;
     }
@@ -22,6 +22,15 @@ export const Content = styled.div`
   grid-area: content;
   width: 80%;
   margin: 30px auto;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a {
+    width: fit-content;
+  }
 
   overflow-y: auto;
   ::-webkit-scrollbar {
@@ -44,7 +53,7 @@ export const Content = styled.div`
     margin: 15px 0;
   }
 
-  .update {
+  .create {
     display: flex;
     align-items: center;
     gap: 8px;

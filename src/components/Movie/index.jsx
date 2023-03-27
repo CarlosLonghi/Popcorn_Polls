@@ -5,7 +5,7 @@ import { Star } from '../Star'
 export function Movie({ data, ...rest }){
   return(
     <Container {...rest}>
-      <Content to={`/preview_movie/:${data.id}`}>
+      <Content to={`/preview_movie/${data.id}`}>
         <h1>{data.title}</h1>
         
         <Star
