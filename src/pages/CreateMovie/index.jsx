@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { FiArrowLeft, FiSave, FiTrash2 } from 'react-icons/fi'
+import { FiArrowLeft, FiSave } from 'react-icons/fi'
+import { ImCancelCircle } from 'react-icons/im'
 import { Container, Form } from "./styles";
 
 import { api } from '../../services/api';
@@ -145,11 +146,12 @@ export function CreateMovie(){
 
         <div className='buttons'>
           <Button 
-            title='Excluir filme'
-            icon={FiTrash2}
+            title='Cancelar'
+            icon={ImCancelCircle}
+            onClick={handleBack}
           />
           <Button 
-            title='Salvar alterações'
+            title='Salvar'
             icon={FiSave}
             onClick={handleCreateMovie}
           />
