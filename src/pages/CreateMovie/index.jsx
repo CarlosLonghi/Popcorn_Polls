@@ -15,6 +15,8 @@ import { TextArea } from '../../components/TextArea';
 import { TagMovie } from '../../components/TagMovie';
 import { RiStarFill } from 'react-icons/ri';
 
+import { toast } from 'react-toastify';
+
 export function CreateMovie(){
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
@@ -26,6 +28,17 @@ export function CreateMovie(){
   const [newTag, setNewTag] = useState('')
 
   const navigate = useNavigate()
+
+  const alertConfig = {
+    position: "top-center",
+    autoClose: 2000,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: false,
+    progress: undefined,
+    theme: "dark",
+  }
   
   function handleBack(){
     navigate(-1)
@@ -42,19 +55,19 @@ export function CreateMovie(){
 
   async function handleCreateMovie() {
     if(!title) {
-      return alert('Informe o titulo do Filme!')
+      return toast.info('Informe o titulo do Filme!', alertConfig)
     }
 
     if(!rating) {
-      return alert('De uma nota para o Filme!')
+      return toast.info('De uma nota para o Filme!', alertConfig)
     }
 
     if(newTag){
-      return alert('Você esqueceu de adicionar uma Categoria preenchida! Clique no "+" para adiciona-la!')
+      return toast.info('Você esqueceu de adicionar uma Categoria preenchida! Clique no "+" para adiciona-la!', alertConfig)
     }
 
     if(tags.length === 0) {
-      return alert('Informe pelo menos uma categoria do Filme!')
+      return toast.info('Informe pelo menos uma categoria do Filme!', alertConfig)
     }
 
     await api.post('/movie_notes', {
@@ -64,8 +77,8 @@ export function CreateMovie(){
       tags
     })
 
-    alert('Filme criado com sucesso!')
-    handleBack()
+    toast.success('Filme criado com sucesso!', alertConfig)
+    setTimeout(() => handleBack(), 2000)
   }
 
   return(

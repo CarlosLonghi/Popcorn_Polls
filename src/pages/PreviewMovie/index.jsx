@@ -11,9 +11,11 @@ import { api } from '../../services/api'
 
 import { Header } from '../../components/Header'
 import { ButtonText } from '../../components/ButtonText'
+import { Button } from '../../components/Button'
 import { Star } from '../../components/Star'
 import { Tag } from '../../components/Tag'
 
+import { ToastContainer, toast } from 'react-toastify'
 
 export function PreviewMovie(){
   const [data, setData] = useState(null)
@@ -31,13 +33,29 @@ export function PreviewMovie(){
     navigate(-1)
   }
 
-  async function handleRemove(){
-    const confirm = window.confirm('Deseja remover esse Filme?')
+  function handleDeleteItem() {
+    toast.warning(
+      <div>
+        <p>Tem certeza que deseja excluir esse filme?</p>
+        <div className='confirm-alert'>
+          <button onClick={() => toast.dismiss()}>Cancelar</button>
+          <button onClick={() => deleteItem()}>Excluir</button>
+        </div>
+      </div>,
+      { autoClose: false,
+        position: "top-center",
+        hideProgressBar: true,
+        closeOnClick: false,
+        draggable: false,
+        progress: undefined,
+        theme: "dark",
+      }
+    );
+  }
 
-    if(confirm){
-      await api.delete(`/movie_notes/${params.id}`)
-      handleBack()
-    }
+  async function deleteItem(){
+    await api.delete(`/movie_notes/${params.id}`)
+    setTimeout(handleBack(), 2000)
   }
 
   useEffect(() => {
@@ -54,6 +72,7 @@ export function PreviewMovie(){
     <Container>
       <Header/>
 
+      <ToastContainer/>
       {
         data &&
         <Content>
@@ -64,10 +83,10 @@ export function PreviewMovie(){
               onClick={handleBack}
             />
 
-            <ButtonText 
+            <Button 
               title='Excluir' 
               icon={MdDeleteForever}
-              onClick={handleRemove}
+              onClick={handleDeleteItem}
             />
           </header>
           

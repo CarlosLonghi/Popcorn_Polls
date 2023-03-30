@@ -14,6 +14,7 @@ import { Container, Form, Avatar, Background } from "./styles";
 import { Button } from '../../components/Button'
 import { ButtonText } from '../../components/ButtonText'
 import { Input } from '../../components/Input'
+import { toast } from 'react-toastify'
 
 export function Profile(){
   const { user, updateProfile } = useAuth()
@@ -27,6 +28,17 @@ export function Profile(){
 
   const [avatar, setAvatar] = useState(avatarUrl)
   const [avatarFile, setAvatarFile] = useState(null)
+
+  const alertConfig = {
+    position: "top-center",
+    autoClose: 2000,
+    hideProgressBar: true,
+    closeOnClick: false,
+    pauseOnHover: false,
+    draggable: false,
+    progress: undefined,
+    theme: "dark",
+  }
 
   const navigate = useNavigate()
 
@@ -45,7 +57,10 @@ export function Profile(){
     const userUpdated = Object.assign(user, updated)
 
     await updateProfile({ user:userUpdated, avatarFile })
-    handleBack()
+
+    toast.success('Perfil atualizado com sucesso!', alertConfig)
+    setTimeout(handleBack(), 3000)
+    
   }
 
   async function handleChangeAvatar(event){
