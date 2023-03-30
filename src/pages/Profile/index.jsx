@@ -14,7 +14,6 @@ import { Container, Form, Avatar, Background } from "./styles";
 import { Button } from '../../components/Button'
 import { ButtonText } from '../../components/ButtonText'
 import { Input } from '../../components/Input'
-import { ToastContainer, toast } from 'react-toastify'
 
 export function Profile(){
   const { user, updateProfile } = useAuth()
@@ -60,16 +59,6 @@ export function Profile(){
 
   return(
     <Container>
-      <ToastContainer
-        position= "top-center"
-        autoClose= {2000}
-        hideProgressBar= {true}
-        closeOnClick= {false}
-        pauseOnHover= {false}
-        draggable= {false}
-        progress= {undefined}
-        theme= "dark"
-      />
       <header>
         <ButtonText 
           title='Voltar'
