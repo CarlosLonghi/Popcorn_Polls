@@ -38,19 +38,17 @@ export function PreviewMovie(){
       <div>
         <p>Tem certeza que deseja excluir esse filme?</p>
         <div className='confirm-alert'>
-          <button onClick={() => toast.dismiss()}>Cancelar</button>
-          <button onClick={() => deleteItem()}>Excluir</button>
+          <Button 
+            title='Cancelar'
+            onClick={() => toast.dismiss()}
+          />
+          <Button 
+            title='Excluir'
+            onClick={() => deleteItem()}
+          /> 
         </div>
-      </div>,
-      { autoClose: false,
-        position: "top-center",
-        hideProgressBar: true,
-        closeOnClick: false,
-        draggable: false,
-        progress: undefined,
-        theme: "dark",
-      }
-    );
+      </div>
+    )
   }
 
   async function deleteItem(){
@@ -71,8 +69,20 @@ export function PreviewMovie(){
   return(
     <Container>
       <Header/>
-
-      <ToastContainer/>
+      <ToastContainer
+        position="top-center"
+        autoClose={false}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        closeButton={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+      
       {
         data &&
         <Content>

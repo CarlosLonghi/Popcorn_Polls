@@ -16,19 +16,25 @@ export const Container = styled.header`
 `
 
 export const Brand = styled.div`
-  padding-left: 10%;
   grid-area: brand;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: 10%;
   > h1 {
     color: ${({theme}) => theme.COLORS.WINE};
     white-space: nowrap;
     text-shadow: 5px 5px 5px ${({theme}) => theme.COLORS.BACKGROUND_900};
+  }
+  > svg {
+    font-size: 40px;
   }
 `
 
 export const Search = styled.div`
   width: 100%;
   grid-area: search;
-  padding: 0 60px 0;
+  padding: 0 5% 0;
 `
 
 export const Profile = styled.div`

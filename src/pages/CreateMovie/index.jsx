@@ -15,7 +15,7 @@ import { TextArea } from '../../components/TextArea';
 import { TagMovie } from '../../components/TagMovie';
 import { RiStarFill } from 'react-icons/ri';
 
-import { toast } from 'react-toastify';
+import { ToastContainer , toast } from 'react-toastify';
 
 export function CreateMovie(){
   const [title, setTitle] = useState('')
@@ -28,17 +28,6 @@ export function CreateMovie(){
   const [newTag, setNewTag] = useState('')
 
   const navigate = useNavigate()
-
-  const alertConfig = {
-    position: "top-center",
-    autoClose: 2000,
-    hideProgressBar: true,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: false,
-    progress: undefined,
-    theme: "dark",
-  }
   
   function handleBack(){
     navigate(-1)
@@ -55,19 +44,19 @@ export function CreateMovie(){
 
   async function handleCreateMovie() {
     if(!title) {
-      return toast.info('Informe o titulo do Filme!', alertConfig)
+      return toast.info('Informe o titulo do Filme!')
     }
 
     if(!rating) {
-      return toast.info('De uma nota para o Filme!', alertConfig)
+      return toast.info('De uma nota para o Filme!')
     }
 
     if(newTag){
-      return toast.info('Você esqueceu de adicionar uma Categoria preenchida! Clique no "+" para adiciona-la!', alertConfig)
+      return toast.info('Você esqueceu de adicionar uma Categoria preenchida! Clique no "+" para adiciona-la!')
     }
 
     if(tags.length === 0) {
-      return toast.info('Informe pelo menos uma categoria do Filme!', alertConfig)
+      return toast.info('Informe pelo menos uma categoria do Filme!')
     }
 
     await api.post('/movie_notes', {
@@ -77,13 +66,27 @@ export function CreateMovie(){
       tags
     })
 
-    toast.success('Filme criado com sucesso!', alertConfig)
+    toast.success('Filme criado com sucesso!')
     setTimeout(() => handleBack(), 2000)
   }
 
   return(
     <Container>
       <Header/>  
+
+      <ToastContainer 
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        closeButton={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
 
       <Form>
         <header>
@@ -104,7 +107,7 @@ export function CreateMovie(){
           <div className='rating'>
             <h2>Nota:</h2>
           {
-            [...Array(5).keys()].map((star, i) => {
+            [...Array(5).keys()].map( i => {
             const ratingValue = i + 1;
 
             return (

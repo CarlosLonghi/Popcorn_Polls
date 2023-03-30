@@ -20,21 +20,13 @@ export const Container = styled.div`
   .confirm-alert {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    
-    > button {
-      margin-top: 5px;
-      background-color: ${({ theme }) => theme.COLORS.WINE};
-      color: ${({ theme }) => theme.COLORS.WHITE};
 
-      height: 30px;
-      border: none;
-      padding: 0 16px;
-      border-radius: 10px;
-      font-weight: 500;
-      gap: 8px;
+    button {
+      width: fit-content;
+      height: 35px;
     }
   }
+
 `
 
 export const Content = styled.div`

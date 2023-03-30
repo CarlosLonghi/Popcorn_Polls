@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { FiSearch, FiLogOut } from 'react-icons/fi'
+import { GiPopcorn } from 'react-icons/gi'
 
 import { useAuth } from '../../hooks/auth'
 import { api } from '../../services/api';
@@ -22,6 +23,7 @@ export function Header({onChange}) {
 
       <Brand>
         <h1>Popcorn Polls</h1>
+        <GiPopcorn/>
       </Brand>
 
       <Search>
